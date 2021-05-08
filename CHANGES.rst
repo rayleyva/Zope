@@ -20,6 +20,10 @@ https://github.com/zopefoundation/Zope/blob/4.x/CHANGES.rst
   ``rfc850_date``, and ``rfc1123_date`` which used to be in ``App.Common``
   keeping backwards-compatibility imports in place.
 
+- Deprecate usage of "unicode" converters.
+  (`#962 <https://github.com/zopefoundation/Zope/issues/962>`_)
+
+
 Backwards incompatible changes
 ++++++++++++++++++++++++++++++
 

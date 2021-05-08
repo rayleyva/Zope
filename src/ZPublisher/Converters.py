@@ -13,6 +13,7 @@
 
 import html
 import re
+import warnings
 
 from DateTime import DateTime
 from DateTime.interfaces import SyntaxError
@@ -174,44 +175,40 @@ class _unicode_converter:
         raise NotImplementedError('convert_unicode')
 
 
-class field2ustring(_unicode_converter):
-    def convert_unicode(self, v):
-        return v
+def field2ustring(v):
+    warnings.warn(
+        "The converter `field2ustring` is deprecated "
+        "and will be removed in Zope 6. "
+        "Please use field2string instead.",
+        DeprecationWarning)
+    return field2string(v)
 
 
-field2ustring = field2ustring()
+def field2utokens(v):
+    warnings.warn(
+        "The converter `field2utokens` is deprecated "
+        "and will be removed in Zope 6. "
+        "Please use field2tokens instead.",
+        DeprecationWarning)
+    return field2tokens(v)
 
 
-class field2utokens(_unicode_converter):
-    def convert_unicode(self, v):
-        return v.split()
+def field2utext(v):
+    warnings.warn(
+        "The converter `field2utext` is deprecated "
+        "and will be removed in Zope 6. "
+        "Please use field2text instead.",
+        DeprecationWarning)
+    return field2text(v)
 
 
-field2utokens = field2utokens()
-
-
-class field2utext(_unicode_converter):
-    def convert_unicode(self, v):
-        if isinstance(v, bytes):
-            return str(field2text(v.encode('utf8')), 'utf8')
-        return v
-
-
-field2utext = field2utext()
-
-
-class field2ulines:
-    def __call__(self, v):
-        if isinstance(v, (list, tuple)):
-            return [field2ustring(x) for x in v]
-        v = str(v)
-        return self.convert_unicode(v)
-
-    def convert_unicode(self, v):
-        return field2utext.convert_unicode(v).splitlines()
-
-
-field2ulines = field2ulines()
+def field2ulines(v):
+    warnings.warn(
+        "The converter `field2utext` is deprecated "
+        "and will be removed in Zope 6. "
+        "Please use field2text instead.",
+        DeprecationWarning)
+    return field2lines(v)
 
 
 type_converters = {
