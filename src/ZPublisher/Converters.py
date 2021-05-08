@@ -158,23 +158,6 @@ def field2boolean(v):
     return bool(v)
 
 
-class _unicode_converter:
-
-    def __call__(self, v):
-        # Convert a regular python string. This probably doesn't do
-        # what you want, whatever that might be. If you are getting
-        # exceptions below, you probably missed the encoding tag
-        # from a form field name. Use:
-        #       <input name="description:utf8:ustring" .....
-        # rather than
-        #       <input name="description:ustring" .....
-        v = str(v)
-        return self.convert_unicode(v)
-
-    def convert_unicode(self, v):
-        raise NotImplementedError('convert_unicode')
-
-
 def field2ustring(v):
     warnings.warn(
         "The converter `field2ustring` is deprecated "
