@@ -160,36 +160,36 @@ def field2boolean(v):
 
 def field2ustring(v):
     warnings.warn(
-        "The converter `field2ustring` is deprecated "
+        "The converter `(field2)ustring` is deprecated "
         "and will be removed in Zope 6. "
-        "Please use field2string instead.",
+        "Please use `(field2)string` instead.",
         DeprecationWarning)
     return field2string(v)
 
 
 def field2utokens(v):
     warnings.warn(
-        "The converter `field2utokens` is deprecated "
+        "The converter `(field2)utokens` is deprecated "
         "and will be removed in Zope 6. "
-        "Please use field2tokens instead.",
+        "Please use `(field2)tokens` instead.",
         DeprecationWarning)
     return field2tokens(v)
 
 
 def field2utext(v):
     warnings.warn(
-        "The converter `field2utext` is deprecated "
+        "The converter `(field2)utext` is deprecated "
         "and will be removed in Zope 6. "
-        "Please use field2text instead.",
+        "Please use `(field2)text` instead.",
         DeprecationWarning)
     return field2text(v)
 
 
 def field2ulines(v):
     warnings.warn(
-        "The converter `field2utext` is deprecated "
+        "The converter `(field2u)lines` is deprecated "
         "and will be removed in Zope 6. "
-        "Please use field2text instead.",
+        "Please use `(field2)lines` instead.",
         DeprecationWarning)
     return field2lines(v)
 
@@ -198,7 +198,7 @@ type_converters = {
     'float': field2float,
     'int': field2int,
     'long': field2long,
-    'string': field2string,  # to native str
+    'string': field2string,
     'bytes': field2bytes,
     'date': field2date,
     'date_international': field2date_international,
