@@ -8,8 +8,20 @@ The change log for the previous version, Zope 4, is at
 https://github.com/zopefoundation/Zope/blob/4.x/CHANGES.rst
 
 
-5.2 (unreleased)
+5.2.1 (unreleased)
+------------------
+
+- Update to newest compatible versions of dependencies.
+
+
+5.2 (2021-05-21)
 ----------------
+
+- Prevent traversal to names starting with ``_`` in TAL expressions
+  and fix path expressions for the ``chameleon.tales`` expression engine.
+
+- Provide friendlier ZMI error message for the Transaction Undo form
+  (`#964 <https://github.com/zopefoundation/Zope/issues/964>`_)
 
 - Updated/fixed the poll application tutorial in the Zope Developers Guide
   (`#958 <https://github.com/zopefoundation/Zope/issues/958>`_)

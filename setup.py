@@ -29,7 +29,7 @@ def _read_file(filename):
 README = _read_file('README.rst')
 CHANGES = _read_file('CHANGES.rst')
 
-version = '5.2.dev0'
+version = '5.2.1.dev0'
 
 
 setup(
@@ -129,7 +129,6 @@ setup(
         'docs': [
             'Sphinx',
             'sphinx_rtd_theme',
-            'repoze.sphinx.autointerface',
             'tempstorage',
         ],
         'wsgi': [
